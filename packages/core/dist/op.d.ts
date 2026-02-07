@@ -10,6 +10,11 @@ export type Op = {
     path: string;
     kind: "lww_set";
     value: unknown;
+    sig?: {
+        kid: string;
+        alg: "ed25519";
+        bytes: Uint8Array;
+    };
 };
 export declare function opId(actor: ActorId, ts: HLC): string;
 //# sourceMappingURL=op.d.ts.map

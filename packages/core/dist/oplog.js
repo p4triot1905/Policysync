@@ -3,13 +3,23 @@ import { hlcCompare } from "./index.js";
 export class OpLog {
     ops = [];
     seen = new Set();
-    add(op) {
+    guard;
+    constructor(opts) {
+        this.guard = opts?.guard;
+    }
+    async add(op) {
+        // Optional verification / policy guard
+        if (this.guard) {
+            const ok = await this.guard(op);
+            if (!ok)
+                return false;
+        }
         // Deduplicate by op id
         if (this.seen.has(op.id))
             return false;
         this.seen.add(op.id);
         this.ops.push(op);
-        // Keep a deterministic order (ts + actor is already inside HLC)
+        // Keep a deterministic order
         this.ops.sort((a, b) => hlcCompare(a.ts, b.ts));
         return true;
     }

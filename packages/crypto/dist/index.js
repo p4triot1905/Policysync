@@ -36,4 +36,5 @@ export function webCryptoProvider() {
         hash,
     };
 }
+export * from "./sodium.js";
 //# sourceMappingURL=index.js.map

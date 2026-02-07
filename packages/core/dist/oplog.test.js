@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { hlcNow } from "./index.js";
 import { OpLog } from "./oplog.js";
 import { opId } from "./op.js";
-test("OpLog should deduplicate and order ops deterministically", () => {
+test("OpLog should deduplicate and order ops deterministically", async () => {
     const log = new OpLog();
     const ts1 = hlcNow("A");
     const ts2 = hlcNow("A", ts1);
@@ -27,9 +27,9 @@ test("OpLog should deduplicate and order ops deterministically", () => {
         kind: "lww_set",
         value: "second",
     };
-    assert.equal(log.add(op2), true);
-    assert.equal(log.add(op1), true);
-    assert.equal(log.add(op1), false); // duplicate
+    assert.equal(await log.add(op2), true);
+    assert.equal(await log.add(op1), true);
+    assert.equal(await log.add(op1), false); // duplicate
     const all = log.all();
     assert.equal(all.length, 2);
     assert.equal(all[0].value, "first");

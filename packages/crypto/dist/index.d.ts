@@ -20,4 +20,5 @@ export type CryptoProvider = {
 export declare function utf8(s: string): Bytes;
 export declare function bytesEqual(a: Bytes, b: Bytes): boolean;
 export declare function webCryptoProvider(): CryptoProvider;
+export * from "./sodium.js";
 //# sourceMappingURL=index.d.ts.map

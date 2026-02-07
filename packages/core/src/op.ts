@@ -26,6 +26,13 @@ export type Op = {
 
   // Value for the operation (JSON-serializable)
   value: unknown;
+
+  // Signature over the canonical op payload (optional, for signed ops)
+  sig?: {
+    kid: string;
+    alg: "ed25519";
+    bytes: Uint8Array;
+  };
 };
 
 export function opId(actor: ActorId, ts: HLC): string {

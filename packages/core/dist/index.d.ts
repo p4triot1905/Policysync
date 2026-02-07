@@ -22,4 +22,5 @@ export declare class InMemoryStore {
 }
 export * from "./op.js";
 export * from "./oplog.js";
+export * from "./signed.js";
 //# sourceMappingURL=index.d.ts.map

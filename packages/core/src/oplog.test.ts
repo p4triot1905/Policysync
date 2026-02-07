@@ -4,7 +4,7 @@ import { hlcNow } from "./index.js";
 import { OpLog } from "./oplog.js";
 import { opId } from "./op.js";
 
-test("OpLog should deduplicate and order ops deterministically", () => {
+test("OpLog should deduplicate and order ops deterministically", async () => {
   const log = new OpLog();
 
   const ts1 = hlcNow("A");
@@ -32,9 +32,9 @@ test("OpLog should deduplicate and order ops deterministically", () => {
     value: "second",
   };
 
-  assert.equal(log.add(op2), true);
-  assert.equal(log.add(op1), true);
-  assert.equal(log.add(op1), false); // duplicate
+  assert.equal(await log.add(op2), true);
+  assert.equal(await log.add(op1), true);
+  assert.equal(await log.add(op1), false); // duplicate
 
   const all = log.all();
   assert.equal(all.length, 2);

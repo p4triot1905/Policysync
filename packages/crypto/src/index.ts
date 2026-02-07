@@ -71,3 +71,4 @@ const out = await subtle.digest("SHA-256", ab);
     hash,
   };
 }
+export * from "./sodium.js";
