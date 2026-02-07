@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/p4triot1905/Policysync#readme",
   "devDependencies": {
+    "@types/node": "^25.2.1",
     "eslint": "^10.0.0",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",

@@ -20,4 +20,6 @@ export declare class InMemoryStore {
     upsertTask(id: string, title: LWW<string>): void;
     getTask(id: string): Task | undefined;
 }
+export * from "./op.js";
+export * from "./oplog.js";
 //# sourceMappingURL=index.d.ts.map

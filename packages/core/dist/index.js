@@ -34,4 +34,6 @@ export class InMemoryStore {
         return this.tasks.get(id);
     }
 }
+export * from "./op.js";
+export * from "./oplog.js";
 //# sourceMappingURL=index.js.map

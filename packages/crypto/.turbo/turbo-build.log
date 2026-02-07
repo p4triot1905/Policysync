@@ -1,0 +1,5 @@
+
+
+> @policysync/crypto@0.0.1 build /workspaces/Policysync/packages/crypto
+> tsc -p tsconfig.json
+
