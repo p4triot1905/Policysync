@@ -1,0 +1,5 @@
+
+
+> @policysync/core@0.0.1 build /workspaces/Policysync/packages/core
+> tsc -p tsconfig.json
+

@@ -1,0 +1,35 @@
+{
+  "name": "policysync",
+  "version": "1.0.0",
+  "description": "Local-first secure sync library with policy-based access control and deterministic merges.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "turbo lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p4triot1905/Policysync.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/p4triot1905/Policysync/issues"
+  },
+  "homepage": "https://github.com/p4triot1905/Policysync#readme",
+  "devDependencies": {
+    "eslint": "^10.0.0",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "turbo": "^2.8.3",
+    "typescript": "^5.9.3"
+  },
+  "private": true,
+  "packageManager": "pnpm@9.0.0"
+}
