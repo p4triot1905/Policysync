@@ -49,7 +49,7 @@ type Op = {
   value: unknown;
   sig?: Signature;
 };
-
+//
 Operations are;
 append-only
 ordered deterministically
@@ -65,12 +65,12 @@ OpLog
 The OpLog is an append-only log that:
 deduplicates operations,
 orders them deterministically,
-optionally enforces verification and policy checks
+optionally enforces verification and policy checks//
 const log = new OpLog({
   guard: (op) => verifyOp(crypto, op, publicKey),
 });
 If verification fails, the operation is rejected.
-
+//
 Cryptographic Model
 PolicySync uses:
 Ed25519 for signing and verification,
@@ -80,12 +80,12 @@ Security properties:
 tampering is detectable,
 replayed or modified operations are rejected,
 identity is bound to every operation.
-
+//
 Installation 
 pnpm add @policysync/core @policysync/crypto
-
+//
 Quick start
-
+//
 import { OpLog, hlcNow, signOp, verifyOp } from "@policysync/core";
 import { sodiumProvider } from "@policysync/crypto";
 
@@ -127,14 +127,14 @@ provide anonymity,
 hide metadata,
 encrypt payloads (yet),
 manage key distribution for you.
-
+//
 What PolicySync Is NOT
 ❌ Not a database
 ❌ Not a CRDT UI framework
 ❌ Not a server
 ❌ Not a consensus system
 PolicySync is a low-level synchronization primitive, not a platform.
-
+//
 Project Status
 V1 – Stable Secure Core
 deterministic merge ✔
