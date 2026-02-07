@@ -9,9 +9,7 @@ test("Ed25519 sign/verify should work", async () => {
 
   const msg = utf8("hello");
   const sig = await c.sign(msg, secretKey);
-  const ok = await c.verify(msg, sig, publicKey);
-  assert.equal(ok, true);
 
-  const ok2 = await c.verify(utf8("tamper"), sig, publicKey);
-  assert.equal(ok2, false);
+  assert.equal(await c.verify(msg, sig, publicKey), true);
+  assert.equal(await c.verify(utf8("tamper"), sig, publicKey), false);
 });
